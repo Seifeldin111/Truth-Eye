@@ -10,8 +10,8 @@ import numpy as np
 import os
 
 
-app = FaceAnalysis(name="buffalo_l")
-app.prepare(ctx_id=-1, det_size=(640, 640))
+# app = FaceAnalysis(name="buffalo_l")
+# app.prepare(ctx_id=-1, det_size=(640, 640))
 
 
 
@@ -158,5 +158,6 @@ def robust_face_detection_from_array(img_bgr):
             return face
 
     return None
+
 
 
