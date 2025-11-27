@@ -1,7 +1,8 @@
 import cv2
-import insightface
-from insightface.app import FaceAnalysis
+# import insightface
+# from insightface.app import FaceAnalysis
 import numpy as np
+
 
 #app = FaceAnalysis(name="buffalo_l")
 #app.prepare(ctx_id=0, det_size=(640, 640))
@@ -26,7 +27,7 @@ def robust_face_detection(image_path):
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     detectors = [
-        ("insightface", lambda: insightface_detector(img_rgb)),
+        #("insightface", lambda: insightface_detector(img_rgb)),
         ("opencv_haar", lambda: opencv_haar_detector(img_rgb)),
         ("dlib_hog", lambda: dlib_hog_detector(img_rgb)),
         #("center_crop", lambda: center_crop_fallback(img_rgb)),
@@ -45,13 +46,13 @@ def robust_face_detection(image_path):
 
 
 
-def insightface_detector(img_rgb):
-    faces = app.get(img_rgb)
-    if len(faces) > 0:
-        face = faces[0]
-        x1, y1, x2, y2 = face.bbox.astype(int)
-        return safe_crop(img_rgb, x1, y1, x2, y2)
-    return None
+# def insightface_detector(img_rgb):
+#     faces = app.get(img_rgb)
+#     if len(faces) > 0:
+#         face = faces[0]
+#         x1, y1, x2, y2 = face.bbox.astype(int)
+#         return safe_crop(img_rgb, x1, y1, x2, y2)
+#     return None
 
 
 def opencv_haar_detector(img_rgb):
@@ -144,7 +145,7 @@ def robust_face_detection_from_array(img_bgr):
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
     detectors = [
-        ("insightface", lambda: insightface_detector(img_rgb)),
+        #("insightface", lambda: insightface_detector(img_rgb)),
         ("opencv_haar", lambda: opencv_haar_detector(img_rgb)),
         ("dlib_hog", lambda: dlib_hog_detector(img_rgb)),
         #("center_crop", lambda: center_crop_fallback(img_rgb)),
@@ -157,4 +158,5 @@ def robust_face_detection_from_array(img_bgr):
             return face
 
     return None
+
 
