@@ -1,9 +1,3 @@
-streamlit==1.32.2
-
-torch
-torchvision==0.16.2
-
-numpy==1.26.4
 opencv-python-headless==4.9.0.80
 
 scikit-image==0.22.0
@@ -13,5 +7,10 @@ lime==0.2.0.1
 insightface==0.7.3
 onnxruntime==1.17.1
 
-Pillow==10.2.0
-
+streamlit==1.32.2
+torch>=2.5.0
+torchvision>=0.21.0
+transformers
+pillow
+numpy
+requests
