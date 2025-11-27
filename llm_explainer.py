@@ -1,7 +1,7 @@
 import os
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyA8TzouPRp7lw3hGLmlvfR3OKshN3oYS68")
+genai.configure(api_key="AIzaSyBy3kt59wkbMeP-6fCLN-DY-6pmJ6lni8o")
 
 def explain_with_llm(
     label: str,
@@ -36,3 +36,4 @@ If something is unclear, state that clearly.
 
 
     return response.text
+
