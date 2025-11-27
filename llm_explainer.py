@@ -26,12 +26,13 @@ Explain why the model made this prediction using ONLY the information above.
 If something is unclear, state that clearly.
 """
 
-    model = genai.GenerativeModel('gemini-2.5-flash-lite-preview-09-2025')
+    model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content(
         prompt,
         generation_config=genai.types.GenerationConfig(
             temperature=0.0
         )
     )
+
 
     return response.text
