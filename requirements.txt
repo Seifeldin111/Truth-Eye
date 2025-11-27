@@ -11,3 +11,5 @@ numpy<2.4
 pillow>=12.0.0
 
 lime
+
+google-generativeai
